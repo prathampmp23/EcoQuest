@@ -131,7 +131,8 @@ a:hover {
   border: 2px solid #dc3545;
   border-radius: 8px;
   overflow: hidden;
-  margin: 10px 500px;
+  margin: 2rem 32rem;
+  width: 300px;
   
 }
 

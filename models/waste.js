@@ -1,6 +1,10 @@
+const mongoose = require("mongoose");
 const wasteLogSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  image: { type: String, required: true }, // Cloud storage URL
+  image: {
+    url: String,
+    filename: String,
+  }, // Cloud storage URL
   quantity: { type: Number, required: true }, // Amount in kg
   status: {
     type: String,

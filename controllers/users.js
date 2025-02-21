@@ -1,4 +1,12 @@
 const User = require("../models/user");
+const Waste = require("../models/waste");
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const { storage } = require("../cloudConfig.js");
+const upload = multer({ storage });
+
+
 
 module.exports.rendersignUpForm = (req, res) => {
   res.render("users/signup.ejs");
@@ -20,7 +28,7 @@ module.exports.signUp = async (req, res) => {
     });
   } catch (err) {
     req.flash("error", err.message);
-    res.redirect("/EcoQuest/signup");
+    res.redirect("/signup");
   }
 };
 
@@ -43,3 +51,52 @@ module.exports.logout = (req, res, next) => {
     res.redirect("/EcoQuest");
   });
 };
+
+module.exports.renderLogForm = (req, res) => {
+  res.render("users/logsForm.ejs");
+};
+
+module.exports.wasteLog = async (req, res, next) => {
+  try {
+    console.log("Request Body:", req.body);
+
+    if (!req.user) {
+      req.flash("error", "You must be logged in to submit a waste log.");
+      return res.redirect("/EcoQuest/login");
+    }
+
+    const { weight, description } = req.body;
+    if (!weight || !description || !req.file) {
+      req.flash("error", "All fields are required!");
+      return res.redirect("/EcoQuest/wasteLog");
+    }
+
+    let url = req.file.path;
+    let filename = req.file.filename;
+
+    // Save waste log
+    const newWasteLog = new Waste({
+      userId: req.user._id,
+      quantity: weight,
+      image: { url, filename },
+      createdAt: new Date(),
+    });
+
+    await newWasteLog.save();
+    req.flash("success", "New waste log created!");
+
+    // Fetch latest showLogs (latest 5 entries)
+    const showLogs = await Waste.find({})
+      .populate("userId", "username") // Fetch user details
+      .sort({ createdAt: -1 }) // Sort by latest entries
+      .limit(5);
+
+    res.render("listing/showLogs", { showLogs });
+  } catch (err) {
+    console.error("Error saving waste log:", err);
+    req.flash("error", "Something went wrong. Please try again.");
+    res.redirect("/EcoQuest/wasteLog");
+  }
+};
+
+

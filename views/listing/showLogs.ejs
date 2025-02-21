@@ -1,0 +1,28 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+  <div class="container mt-4">
+    <h2 class="text-center">🌱 Testimonials - Our Eco Warriors! 🌍</h2>
+
+    <div class="row justify-content-center">
+      <% showLogs.forEach((showLog) => { %>
+        <div class="col-md-4">
+          <div class="card shadow-lg p-3 mb-4">
+            <img src="<%= showLog.image.url %>" class="card-img-top" alt="Recycled Waste Image" style="height: 200px; object-fit: cover;">
+            <div class="card-body text-center">
+              <h5 class="card-title"><%= showLog.userId.username %></h5>
+              <p class="card-text">
+                ♻️ Recycled <strong><%= showLog.quantity %></strong> kg of plastic waste!
+              </p>
+              <p class="text-muted">Logged on <%= new Date(showLog.createdAt).toDateString() %></p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/EcoQuest" class="btn btn-success">🏠 Back to Home</a>
+    </div>
+  </div>
+</body>

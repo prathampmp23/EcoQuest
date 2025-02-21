@@ -1,5 +1,4 @@
 <% layout("layouts/boilerplate") %>
-
 <body>
   <div class="login-toggle">
     <a href="/EcoQuest/login" class="toggle-btn active" id="userLogin"
@@ -27,110 +26,37 @@
       updateActiveState();
     });
   </script>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow-lg p-4">
-          <h2 class="text-center mb-4">Login</h2>
-
-          <form
-            action="/EcoQuest/login"
-            method="POST"
-            class="needs-validation"
-            novalidate
-            enctype="multipart/form-data"
-          >
-            <!-- Username -->
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                class="form-control"
-                placeholder="Enter your username"
-                required
-              />
-              <div class="invalid-feedback">Username is required.</div>
-            </div>
-
-            <!-- Email -->
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-control"
-                placeholder="Enter your email"
-                required
-              />
-              <div class="invalid-feedback">Please enter a valid email.</div>
-            </div>
-
-            <!-- Password -->
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                class="form-control"
-                placeholder="Enter your password"
-                required
-              />
-              <div class="invalid-feedback">Password is required.</div>
-            </div>
-
-            <!-- Profile Picture Upload -->
-            <div class="mb-3">
-              <label for="profilePicture" class="form-label"
-                >Profile Picture (optional)</label
-              >
-              <input type="file" name="listing[image] id="profilePicture"
-              name="profilePicture" class="form-control" accept="image/*" />
-            </div>
-
-            <!-- Role Selection -->
-            <div class="mb-3">
-              <label for="role" class="form-label">Role</label>
-              <select id="role" name="role" class="form-select">
-                <option value="user" selected>User</option>
-                <option value="admin">Admin</option>
-              </select>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-success w-100">Login</button>
-          </form>
-
-          <!-- Signup Link -->
-          <p class="text-center mt-3">
-            Don't have an account? <a href="/EcoQuest/signup">Sign Up</a>
-          </p>
+  <div class="row mb-3">
+    <div class="col-6 offset-3">
+      <h2 class="mb-4 mt-3">Login</h2>
+      <form action="/EcoQuest/login" method="POST" class="needs-validation mb-3" novalidate>
+        <div class="mb-3">
+          <label for="username" class="form-lable">Username</label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            placeholder="Enter Username"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks good.</div>
+          <div class="invalid-feedback">Please provide a valid Username.</div>
         </div>
-      </div>
+        <div class="mb-3">
+          <label for="password" class="form-lable">Password</label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            placeholder="Enter password"
+            class="form-control"
+            required
+          />
+        </div>
+        <button class="btn btn-success">SignUp</button>
+      </form>
+      <p>Already register &nbsp;<a href="/EcoQuest/login">Login</a></p>
     </div>
   </div>
-
-  <script>
-    // Bootstrap Form Validation
-    (function () {
-      "use strict";
-      const forms = document.querySelectorAll(".needs-validation");
-      Array.from(forms).forEach((form) => {
-        form.addEventListener(
-          "submit",
-          (event) => {
-            if (!form.checkValidity()) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add("was-validated");
-          },
-          false
-        );
-      });
-    })();
-  </script>
 </body>

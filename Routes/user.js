@@ -5,18 +5,25 @@ const Admin = require("../models/admin");
 const wrapAsync = require("../Utils/wrapAsync");
 const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware");
+const multer = require("multer");
+const { storage } = require("../cloudConfig.js");
+const upload = multer({ storage });
 
 const userController = require("../controllers/users.js");
 const adminController = require("../controllers/admin.js");
+
+router
+  .route("/EcoQuest/wasteLog")
+  .get(userController.renderLogForm)
+  .post(upload.single("image"), wrapAsync(userController.wasteLog));
+
 
 router
   .route("/EcoQuest/signup")
   .get(userController.rendersignUpForm)
   .post(wrapAsync(userController.signUp));
 
-router
-  .route("/EcoQuest/admin")
-  .get(adminController.renderAdminForm)
+router.route("/EcoQuest/admin").get(adminController.renderAdminForm);
 
 router
   .route("/EcoQuest/login")

@@ -98,7 +98,7 @@ app.get("/EcoQuest", (req, res) => {
 
 // Log Data route
 app.get("/EcoQuest/logsForm", (req, res) => {
-  res.render("listing/logForm.ejs");
+  res.render("listing/logsForm.ejs");
 });
 
 // Awarness route
