@@ -100,3 +100,26 @@ module.exports.wasteLog = async (req, res, next) => {
 };
 
 
+module.exports.renderLeaderboard = async (req, res) => {
+  const leaderboard = await User.aggregate([
+    {
+      $lookup: {
+        from: "wastelogs", 
+        localField: "_id",
+        foreignField: "userId",
+        as: "wasteLogs"
+      }
+    },
+    {
+      $project: {
+        username: 1,
+        profilePic: 1,
+        totalRecycled: { $sum: "$wasteLogs.quantity" }
+      }
+    },
+    { $sort: { totalRecycled: -1 } }, // Sort by highest waste recycled
+    { $limit: 10 } // Show top 10 users
+  ]);
+
+  res.render("listing/leaderboard.ejs", { leaderboard });
+};

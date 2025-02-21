@@ -25,6 +25,8 @@ router
 
 router.route("/EcoQuest/admin").get(adminController.renderAdminForm);
 
+router.get("/EcoQuest/leaderboard", userController.renderLeaderboard);
+
 router
   .route("/EcoQuest/login")
   .get(userController.renderLoginForm)

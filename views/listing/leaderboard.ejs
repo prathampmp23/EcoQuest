@@ -1,0 +1,52 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+  <div class="container mt-4">
+    <h2 class="text-center">🏆 EcoQuest Leaderboard 🌱</h2>
+    <p class="text-center text-muted">Top Eco Warriors leading the recycling efforts!</p>
+
+    <div class="row justify-content-center">
+      <% if (leaderboard.length > 0) { %>
+        <% leaderboard.forEach((user, index) => { %>
+          <div class="col-md-4">
+            <div class="card shadow-lg p-3 mb-4 text-center">
+              <div class="position-relative">
+                <% if (index === 0) { %>
+                  <span class="badge bg-warning text-dark position-absolute top-0 start-50 translate-middle">
+                    🥇 1st Place
+                  </span>
+                <% } else if (index === 1) { %>
+                  <span class="badge bg-secondary position-absolute top-0 start-50 translate-middle">
+                    🥈 2nd Place
+                  </span>
+                <% } else if (index === 2) { %>
+                  <span class="badge bg-brown position-absolute top-0 start-50 translate-middle">
+                    🥉 3rd Place
+                  </span>
+                <% } %>
+              </div>
+              <img
+                src="<%= user.profilePic || '/images/default-profile.png' %>"
+                class="card-img-top mx-auto mt-2"
+                alt="User Image"
+                style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;"
+              />
+              <div class="card-body">
+                <h5 class="card-title"><%= user.username %></h5>
+                <p class="card-text">
+                  ♻️ Total Waste Recycled: <strong><%= user.totalRecycled %></strong> kg
+                </p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p class="text-center text-muted">No rankings available yet. Start recycling to be on the leaderboard!</p>
+      <% } %>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/EcoQuest" class="btn btn-success">🏠 Back to Home</a>
+    </div>
+  </div>
+</body>
