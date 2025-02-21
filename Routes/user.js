@@ -13,6 +13,11 @@ router
   .post(wrapAsync(userController.signUp));
 
 router
+  .route("/EcoQuest/admin")
+  .get(userController.adminForm)
+  .post(wrapAsync(userController.admin));
+
+router
   .route("/EcoQuest/login")
   .get(userController.renderLoginForm)
   .post(

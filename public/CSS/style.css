@@ -107,6 +107,26 @@ a:hover {
   text-decoration: underline;
 }
 
+.login-toggle {
+  display: flex;
+  border: 2px solid #dc3545;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #dc3545;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn.active,
+.toggle-btn:hover {
+  background-color: #dc3545;
+  color: white;
+}
 
 /* Footer */
 footer {
