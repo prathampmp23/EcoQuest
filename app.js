@@ -101,6 +101,10 @@ app.get("/EcoQuest/logsForm", (req, res) => {
   res.render("listing/logsForm.ejs");
 });
 
+app.get("/EcoQuest/trackCollection", (req, res) => {
+  res.render("listing/trackCollection.ejs");
+});
+
 // Awarness route
 app.get("/EcoQuest/awarness", (req, res) => {
   res.render("listing/awarness.ejs");
@@ -127,3 +131,5 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log("Server is listening to port 3000.");
 });
+
+
