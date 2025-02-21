@@ -19,7 +19,7 @@ app.post("/logs/submit", async (req, res) => {
 
     await newLog.save(); // Save to MongoDB
 
-    res.redirect("/dashboard"); // Redirect after submission
+    res.redirect("/EcoQuest#"); // Redirect after submission
   } catch (error) {
     console.error("Error saving log:", error);
     res.status(500).send("Error submitting log.");
