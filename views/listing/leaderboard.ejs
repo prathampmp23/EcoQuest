@@ -20,13 +20,13 @@
                     🥈 2nd Place
                   </span>
                 <% } else if (index === 2) { %>
-                  <span class="badge bg-brown position-absolute top-0 start-50 translate-middle">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle">
                     🥉 3rd Place
                   </span>
                 <% } %>
               </div>
               <img
-                src="<%= user.profilePic || '/images/default-profile.png' %>"
+                src="<%= user.profilePic || '/images/default-profile.jpg' %>"
                 class="card-img-top mx-auto mt-2"
                 alt="User Image"
                 style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;"
