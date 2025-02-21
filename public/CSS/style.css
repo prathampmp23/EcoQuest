@@ -85,6 +85,29 @@ nav {
 
 
 
+.card {
+  border-radius: 10px;
+  background: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
 /* Footer */
 footer {
   width: 100%;

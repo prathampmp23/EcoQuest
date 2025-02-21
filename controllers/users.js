@@ -15,12 +15,12 @@ module.exports.signUp = async (req, res) => {
       if (err) {
         return next(err);
       }
-      req.flash("success", "Welcome to Project!");
-      res.redirect("/Project");
+      req.flash("success", "Welcome to EcoQuest!");
+      res.redirect("/EcoQuest");
     });
   } catch (err) {
     req.flash("error", err.message);
-    res.redirect("/Project/signup");
+    res.redirect("/EcoQuest/signup");
   }
 };
 
@@ -29,8 +29,8 @@ module.exports.renderLoginForm = (req, res) => {
 };
 
 module.exports.login = async (req, res) => {
-  req.flash("success", "Welcome back to Project!");
-  let redirectUrl = res.locals.redirectUrl || "/Project";
+  req.flash("success", "Welcome back to EcoQuest!");
+  let redirectUrl = res.locals.redirectUrl || "/EcoQuest";
   res.redirect(redirectUrl);
 };
 
@@ -40,6 +40,6 @@ module.exports.logout = (req, res, next) => {
       return next(err);
     }
     req.flash("success", "You are logged out!");
-    res.redirect("/Project");
+    res.redirect("/EcoQuest");
   });
 };
