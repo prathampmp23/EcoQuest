@@ -11,15 +11,42 @@
   
 
     .hero-section {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      max-width: 1200px;
-      margin: 20px auto;
-    }
+  position: relative; /* Required for absolute positioning */
+  background-image: url('images/plastic.JPG');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 1400px;
+  margin: 20px auto;
+  height: 586px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0); 
+  backdrop-filter: blur(7px); 
+  z-index: 1;
+}
+
+.hero-section * {
+  position: relative;
+  z-index: 2; /* Ensure text and other content appear above the overlay */
+}
+
   
     .hero-title {
       font-size: 3em;
@@ -62,7 +89,7 @@
     .features-section {
       background: #f4f9fc;
       padding: 60px 20px;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 20px auto;
       border-radius: 15px;
     }
@@ -118,7 +145,7 @@
     .about-section {
       background: linear-gradient(to right, #e0f7fa, #b2ebf2);
       padding: 60px 20px;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 20px auto;
       border-radius: 15px;
       text-align: center;
@@ -138,7 +165,7 @@
       color: white;
       padding: 60px 20px;
       text-align: center;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 20px auto;
       border-radius: 15px;
     }
@@ -208,7 +235,7 @@
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">♻️</div>
-        <h3 class="feature-title">Log Plastic Waste</h3>
+        <h3 class="feature-title">Log Plastic Waste and recylcleoiuher</h3>
         <p class="feature-desc">
           Easily track every piece of plastic you collect and see your environmental impact grow.
         </p>
@@ -301,3 +328,4 @@
     </div>
   </div>
 </section>
+

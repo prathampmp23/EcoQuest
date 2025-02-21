@@ -62,7 +62,7 @@ nav {
 }
 
 .login-btn {
-  background-color: #f14164 !important;
+  background-color: #388e3c !important;
   color: white !important;
   font-size: 1.2rem;
   width: 10vw;
@@ -73,7 +73,7 @@ nav {
 .SIGNUP {
   background-color: #ffffff !important;
   color: rgb(73, 73, 73) !important;
-  outline: 1px solid #f14164;
+  outline: 1px solid #388e3c;
   font-size: 1.2rem;
   width: 10vw;
   text-align: center;
@@ -84,7 +84,7 @@ nav {
 .fa-arrow-right {
   padding: 10px;
   background-color: white;
-  color: #ff5757;
+  color: #388e3c;
   border-radius: 50%;
 }
 
@@ -495,7 +495,7 @@ footer {
 .navigation a:hover {
   /* text-decoration: underline; */
   font-weight: bold;
-  color: #f14164;
+  color: #388e3c;
 }
 
 .social-icons {
@@ -504,7 +504,7 @@ footer {
 }
 
 .social-icons a {
-  color: #f14164;
+  color: #388e3c;
   font-size: 20px;
   text-decoration: none;
 }
@@ -526,7 +526,7 @@ footer {
 
 .bottom-link a:hover {
   font-weight: bold;
-  color: #f14164;
+  color: #388e3c;
 }
 
 /* Responsive Design */
@@ -613,3 +613,6 @@ footer {
     width: 80%;
   }
 }
+
+
+
