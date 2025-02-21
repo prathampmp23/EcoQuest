@@ -17,7 +17,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 10px 30px;
   border-radius: 16px;
   margin: 1rem !important;
 }
@@ -37,8 +37,9 @@ nav {
 }
 
 .navbar-brand-img {
-  width: 6rem;
-  height: 3rem;
+  width: 7rem;
+  height: 4rem;
+  object-fit: contain;
 }
 
 .main-link {
@@ -68,6 +69,16 @@ nav {
   text-align: center;
   border-radius: 1rem;
 }
+.SIGNUP{
+  background-color: #ffffff !important;
+  color: rgb(73, 73, 73) !important;
+  outline: 1px solid #f14164;
+  font-size: 1.2rem;
+  width: 10vw;
+  text-align: center;
+  border-radius: 1rem;
+  margin-right: 10px;
+}
 
 .fa-arrow-right {
   padding: 10px;
@@ -76,12 +87,20 @@ nav {
   border-radius: 50%;
 }
 
+
 .fa-arrow-right:hover {
   transform: translateX(10px);
   transition-delay: 0.2s;
   transition-duration: 0.3s;
   transition-timing-function: linear;
 }
+.fa-arrow-left2:hover {
+  transform: translateX(10px);
+  transition-delay: 0.2s;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
 
 
 

@@ -3,7 +3,7 @@
     <!-- Navbar icon -->
     <a class="navbar-brand z-2" href="/EcoQuest"
       ><img
-        src="/images/logo.png"
+        src="/images/ECO-logo.png"
         alt="EcoQuest-Logo"
         class="navbar-brand-img"
     /></a>
@@ -19,17 +19,23 @@
     <div class="collapse navbar-collapse navbar-main" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
         <a class="nav-link main-link" href="/EcoQuest/linkadress1"
-          >Link 1</a
+          >Log data</a
         >
 
         <a class="nav-link main-link" href="/EcoQuest/linkadress2"
-          >Link 2</a
+          >Awareness</a
         >
         <a class="nav-link main-link" href="/EcoQuest/linkadress3"
-          >Link 3</a
+          >Leaderboard</a
         >
       </div>
       <div class="navbar-nav ms-auto">
+          <!-- If user not Exist -->
+          <% if(!currentUser) { %>
+            <a class="nav-link SIGNUP" href="/EcoQuest/SIGNUP"
+              ><b>SIGN UP &nbsp;<i class="fa-solid fa-arrow-left2"></i></b
+            ></a>
+            <% } %>
         <!-- If user not Exist -->
         <% if(!currentUser) { %>
         <a class="nav-link login-btn" href="/EcoQuest/login"
