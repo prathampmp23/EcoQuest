@@ -130,7 +130,13 @@
         <div class="card shadow-lg p-4">
           <h2 class="text-center mb-4">Log Plastic Waste Collection</h2>
 
-          <form action="/logs/submit" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+          <form
+            action="/EcoQuest/wasteLog"
+            method="POST"
+            class="needs-validation"
+            novalidate
+            enctype="multipart/form-data"
+          >
             <!-- Description -->
             <div class="mb-3">
               <label for="description" class="form-label">Description</label>
@@ -162,7 +168,6 @@
 
             <!-- Image Upload -->
             <div class="mb-3">
-              <label for="image" class="form-label">Upload Image (Required)</label>
               <input
                 type="file"
                 id="image"
@@ -176,7 +181,9 @@
 
             <!-- Recycling Center (Optional) -->
             <div class="mb-3">
-              <label for="recyclingCenter" class="form-label">Recycling Center (Optional)</label>
+              <label for="recyclingCenter" class="form-label"
+                >Recycling Center (Optional)</label
+              >
               <input
                 type="text"
                 id="recyclingCenter"
@@ -187,12 +194,18 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-success w-100">Submit Log</button>
+            <button type="submit" class="btn btn-success w-100">
+              Submit Log
+            </button>
           </form>
 
           <!-- Back to Dashboard -->
           <p class="text-center mt-3">
+
             <a href="/dashboard" class="back-link">Back to Dashboard</a>
+
+            <a href="/EcoQuest">Back to home page</a>
+
           </p>
         </div>
       </div>

@@ -13,6 +13,8 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Waste = require("./models/waste");
+
 
 // Require Express Router
 const userRouter = require("./Routes/user.js");
@@ -92,8 +94,12 @@ app.get("/", (req, res) => {
 });
 
 // Index route
-app.get("/EcoQuest", (req, res) => {
-  res.render("listing/index.ejs");
+app.get("/EcoQuest", async (req, res) => {
+  const showLogs = await Waste.find({})
+    .populate("userId", "username") // Fetch user details
+    .sort({ createdAt: -1 }) // Sort by latest entries
+    .limit(5);
+  res.render("listing/index.ejs",{showLogs});
 });
 
 // Log Data route
@@ -125,7 +131,6 @@ app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not found!"));
 });
 
-
 // **Error handling
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went Wrong!" } = err;
@@ -136,5 +141,4 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log("Server is listening to port 3000.");
 });
-
 

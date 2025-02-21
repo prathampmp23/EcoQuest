@@ -280,5 +280,51 @@
     <a href="#" class="cta-button">Get Started Now</a>
   </section>
 
+  <h1 class="testimonial-text">Testimonials</h1>
 
-  
+<section>
+  <div class="container-test">
+    <div class="slider-container">
+      <div class="card-wrapper">
+        <% if (showLogs.length > 0) { %>
+          <% showLogs.forEach((showLogs) => { %>
+            <div class="card1">
+              <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                  <img
+                    src="<%= showLogs.image.url %>"
+                    style="border-radius: 50%"
+                    alt="Recycled Waste Image"
+                    class="card-img1"
+                    height="200px"
+                    width="200px"
+                  />
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name"><%= showLogs.userId.username %></h2>
+                <p class="description">
+                  ♻️ Recycled <strong><%= showLogs.quantity %></strong> kg of plastic waste!
+                </p>
+                <button class="button">Eco Warrior</button>
+              </div>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <p class="text-center">No showLogs available yet. Be the first to log your waste!</p>
+        <% } %>
+      </div>
+
+      <div class="btnnn">
+        <button class="prev">
+          <i class="fa-solid fa-less-than" style="color: #ffffff; z-index: 21"></i>
+        </button>
+        <button class="next">
+          <i class="fa-solid fa-greater-than" style="color: #ffffff"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
