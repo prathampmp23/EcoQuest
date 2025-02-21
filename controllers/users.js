@@ -24,7 +24,7 @@ module.exports.signUp = async (req, res) => {
         return next(err);
       }
       req.flash("success", "Welcome to EcoQuest!");
-      res.redirect("/EcoQuest");
+      res.redirect("/EcoQuest#");
     });
   } catch (err) {
     req.flash("error", err.message);
