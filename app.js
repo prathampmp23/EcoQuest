@@ -112,7 +112,12 @@ app.get("/EcoQuest/awarness", (req, res) => {
 
 // Leadboard route
 app.get("/EcoQuest/leaderboard", (req, res) => {
-  res.render("listing/dashboard.ejs");
+  res.render("listing/leader_board.ejs");
+});
+
+//Recycle route
+app.get("/EcoQuest/Recycle", (req, res) => {
+  res.render("listing/recycle.ejs");
 });
 
 // **Custom ExpressError for "404" Error "page not found"
