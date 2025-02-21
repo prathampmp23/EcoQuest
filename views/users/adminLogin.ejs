@@ -1,0 +1,72 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-4">
+          <h2 class="text-center mb-4">Admin Login</h2>
+
+          <form action="/admin/login" method="POST" class="needs-validation" novalidate>
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control"
+                placeholder="Enter your username"
+                required
+              />
+              <div class="invalid-feedback">Username is required.</div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+              <div class="invalid-feedback">Password is required.</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-danger w-100">Login</button>
+          </form>
+
+          <!-- Back to Home -->
+          <p class="text-center mt-3">
+            <a href="/">Back to Home</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Bootstrap Form Validation
+    (function () {
+      "use strict";
+      const forms = document.querySelectorAll(".needs-validation");
+      Array.from(forms).forEach((form) => {
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+</body>
