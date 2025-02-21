@@ -1,2 +1,254 @@
 <% layout("layouts/boilerplate") %>
 
+<style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+  
+
+    .hero-section {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+  
+    .hero-title {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: -webkit-linear-gradient(#ffffff, #b3e5fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+  
+    .hero-cta {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #4caf50;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+  
+    .hero-cta:hover {
+      background: #388e3c;
+      transform: scale(1.05);
+    }
+  
+
+    .features-section {
+      background: #f4f9fc;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      border-radius: 15px;
+    }
+  
+    .section-title {
+      font-size: 2.2em;
+      color: #1e3c72;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+  
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+  
+    .feature-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+  
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+  
+    .feature-icon {
+      font-size: 3em;
+      color: #81d4fa;
+      margin-bottom: 15px;
+    }
+  
+    .feature-title {
+      font-size: 1.4em;
+      color: #2a5298;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  
+    .feature-desc {
+      font-size: 1em;
+      color: #555;
+      line-height: 1.6;
+    }
+  
+    /* About Section */
+    .about-section {
+      background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      border-radius: 15px;
+      text-align: center;
+    }
+  
+    .about-text {
+      font-size: 1.2em;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+  
+    /* CTA Section */
+    .cta-section {
+      background: #2a5298;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 20px auto;
+      border-radius: 15px;
+    }
+  
+    .cta-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  
+    .cta-desc {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+  
+    .cta-button {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #4caf50;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+  
+    .cta-button:hover {
+      background: #388e3c;
+      transform: scale(1.05);
+    }
+  
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2em;
+      }
+      .hero-subtitle {
+        font-size: 1.1em;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-title {
+        font-size: 1.8em;
+      }
+      .cta-title {
+        font-size: 1.6em;
+      }
+    }
+  </style>
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1 class="hero-title">EcoQuest Plastic Patrol</h1>
+    <p class="hero-subtitle">
+      Transform your community by collecting plastic waste, earning rewards, and learning sustainable habits—all in one app!
+    </p>
+    <a href="#" class="hero-cta">Join the Patrol</a>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features-section">
+    <h2 class="section-title">Why Plastic Patrol?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">♻️</div>
+        <h3 class="feature-title">Log Plastic Waste</h3>
+        <p class="feature-desc">
+          Easily track every piece of plastic you collect and see your environmental impact grow.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3 class="feature-title">Earn Rewards</h3>
+        <p class="feature-desc">
+          Turn your efforts into points and redeem them for eco-friendly goodies.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📍</div>
+        <h3 class="feature-title">Recycling Centers</h3>
+        <p class="feature-desc">
+          Find nearby drop-off points to recycle your collected waste hassle-free.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3 class="feature-title">Educational Hub</h3>
+        <p class="feature-desc">
+          Learn practical tips to reduce plastic use and live greener every day.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about-section">
+    <h2 class="section-title">Our Mission</h2>
+    <p class="about-text">
+      Plastic Patrol is more than an app—it’s a movement. We empower communities to fight plastic pollution by making it fun, rewarding, and educational. Together, we can clean up our planet, one piece at a time.
+    </p>
+  </section>
+  
+  <!-- Call-to-Action Section -->
+  <section class="cta-section">
+    <h2 class="cta-title">Ready to Make a Difference?</h2>
+    <p class="cta-desc">
+      Start collecting, start earning, and start learning today. Be the change your community needs!
+    </p>
+    <a href="#" class="cta-button">Get Started Now</a>
+  </section>
