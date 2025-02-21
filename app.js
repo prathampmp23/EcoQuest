@@ -92,7 +92,7 @@ app.get("/", (req, res) => {
 });
 
 // Index route
-app.get("/Project", (req, res) => {
+app.get("/EcoQuest", (req, res) => {
   res.render("listing/index.ejs");
 });
 

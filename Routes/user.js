@@ -8,17 +8,17 @@ const { saveRedirectUrl } = require("../middleware");
 const userController = require("../controllers/users.js");
 
 router
-  .route("/project/signup")
+  .route("/EcoQuest/signup")
   .get(userController.rendersignUpForm)
   .post(wrapAsync(userController.signUp));
 
 router
-  .route("/project/login")
+  .route("/EcoQuest/login")
   .get(userController.renderLoginForm)
   .post(
     saveRedirectUrl,
     passport.authenticate("local", {
-      failureRedirect: "/project/login",
+      failureRedirect: "/EcoQuest/login",
       failureFlash: true,
     }),
     userController.login
