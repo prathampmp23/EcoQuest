@@ -1,23 +1,45 @@
 <% layout("layouts/boilerplate") %>
 
 <body>
-
-  <div class="offset-5 mar mb-3">
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-      <label class="btn btn-outline-danger" for="btnradio1">user login</label>
-    
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-      <label class="btn btn-outline-danger" for="btnradio2">Admin login </label>
-    </div>
+  <div class="login-toggle">
+    <a href="/EcoQuest/login" class="toggle-btn active" id="userLogin"
+      >User Login</a
+    >
+    <a href="/EcoQuest/admin" class="toggle-btn" id="adminLogin">Admin Login</a>
   </div>
+
+  <script>
+    // JavaScript to handle active state
+    document.addEventListener("DOMContentLoaded", function () {
+      const userBtn = document.getElementById("userLogin");
+      const adminBtn = document.getElementById("adminLogin");
+
+      function updateActiveState() {
+        if (window.location.pathname.includes("/admin")) {
+          userBtn.classList.remove("active");
+          adminBtn.classList.add("active");
+        } else {
+          adminBtn.classList.remove("active");
+          userBtn.classList.add("active");
+        }
+      }
+
+      updateActiveState();
+    });
+  </script>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card shadow-lg p-4">
           <h2 class="text-center mb-4">Login</h2>
 
-          <form action="/EcoQuest/login" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+          <form
+            action="/EcoQuest/login"
+            method="POST"
+            class="needs-validation"
+            novalidate
+            enctype="multipart/form-data"
+          >
             <!-- Username -->
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
@@ -62,17 +84,12 @@
 
             <!-- Profile Picture Upload -->
             <div class="mb-3">
-              <label for="profilePicture" class="form-label">Profile Picture (optional)</label>
-              <input
-                type="file"
-                name="listing[image]
-                id="profilePicture"
-                name="profilePicture"
-                class="form-control"
-                accept="image/*"
-              />
+              <label for="profilePicture" class="form-label"
+                >Profile Picture (optional)</label
+              >
+              <input type="file" name="listing[image] id="profilePicture"
+              name="profilePicture" class="form-control" accept="image/*" />
             </div>
-            
 
             <!-- Role Selection -->
             <div class="mb-3">
@@ -116,5 +133,4 @@
       });
     })();
   </script>
-  
 </body>
