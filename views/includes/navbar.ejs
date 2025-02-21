@@ -18,24 +18,23 @@
     <!-- Navigation links -->
     <div class="collapse navbar-collapse navbar-main" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
-        <a class="nav-link main-link" href="/EcoQuest/logsForm"
-          >Log data</a
-        >
+        <a class="nav-link main-link" href="/EcoQuest/logsForm">Log data</a>
 
-        <a class="nav-link main-link" href="/EcoQuest/awarness"
-          >Awareness</a
-        >
+        <a class="nav-link main-link" href="/EcoQuest/awarness">Awareness</a>
         <a class="nav-link main-link" href="/EcoQuest/leaderboard"
           >Leaderboard</a
         >
+        <a class="nav-link main-link" href="/EcoQuest/Recycle"
+          >Recycle center</a
+        >
       </div>
       <div class="navbar-nav ms-auto">
-          <!-- If user not Exist -->
-          <% if(!currentUser) { %>
-            <a class="nav-link SIGNUP" href="/EcoQuest/signup"
-              ><b>SIGN UP &nbsp;<i class="fa-solid fa-arrow-left2"></i></b
-            ></a>
-            <% } %>
+        <!-- If user not Exist -->
+        <% if(!currentUser) { %>
+        <a class="nav-link SIGNUP" href="/EcoQuest/signup"
+          ><b>SIGN UP &nbsp;<i class="fa-solid fa-arrow-left2"></i></b
+        ></a>
+        <% } %>
         <!-- If user not Exist -->
         <% if(!currentUser) { %>
         <a class="nav-link login-btn" href="/EcoQuest/login"
