@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cardWrapper.style.transform = `translateX(${translateX}px)`;
   });
 });
-=======
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
     const cardWrapper = document.querySelector(".card-wrapper");
@@ -50,5 +49,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       cardWrapper.style.transform = `translateX(${translateX}px)`;
     });
-  });
 
