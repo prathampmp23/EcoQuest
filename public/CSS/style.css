@@ -112,9 +112,12 @@ a:hover {
   border: 2px solid #dc3545;
   border-radius: 8px;
   overflow: hidden;
+  margin: 10px 500px;
+  
 }
 
 .toggle-btn {
+  width: 200px;
   padding: 10px 20px;
   text-decoration: none;
   color: #dc3545;
@@ -126,6 +129,7 @@ a:hover {
 .toggle-btn:hover {
   background-color: #dc3545;
   color: white;
+  text-decoration: none;
 }
 
 /* Footer */

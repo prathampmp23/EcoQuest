@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const User = require("../models/user");
+const Admin = require("../models/admin");
 const wrapAsync = require("../Utils/wrapAsync");
 const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware");
 
 const userController = require("../controllers/users.js");
+const adminController = require("../controllers/admin.js");
 
 router
   .route("/EcoQuest/signup")
@@ -14,8 +16,7 @@ router
 
 router
   .route("/EcoQuest/admin")
-  .get(userController.adminForm)
-  .post(wrapAsync(userController.admin));
+  .get(adminController.renderAdminForm)
 
 router
   .route("/EcoQuest/login")

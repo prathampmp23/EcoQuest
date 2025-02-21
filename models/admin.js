@@ -13,6 +13,6 @@ const adminSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-UserSchema.plugin(passportLocalMongoose);
+// UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("Admin", adminSchema);

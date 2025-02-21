@@ -1,6 +1,33 @@
 <% layout("layouts/boilerplate") %>
 
 <body>
+  <div class="login-toggle">
+    <a href="/EcoQuest/login" class="toggle-btn active" id="userLogin"
+      >User Login</a
+    >
+    <a href="/EcoQuest/admin" class="toggle-btn" id="adminLogin">Admin Login</a>
+  </div>
+
+  <script>
+    // JavaScript to handle active state
+    document.addEventListener("DOMContentLoaded", function () {
+      const userBtn = document.getElementById("userLogin");
+      const adminBtn = document.getElementById("adminLogin");
+
+      function updateActiveState() {
+        if (window.location.pathname.includes("/admin")) {
+          userBtn.classList.remove("active");
+          adminBtn.classList.add("active");
+        } else {
+          adminBtn.classList.remove("active");
+          userBtn.classList.add("active");
+        }
+      }
+
+      updateActiveState();
+    });
+  </script>
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -37,7 +64,7 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-danger w-100">Login</button>
+            <button type="submit" class="btn btn-success w-100">Login</button>
           </form>
 
           <!-- Back to Home -->
