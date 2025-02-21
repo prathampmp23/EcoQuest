@@ -1,13 +1,23 @@
 <% layout("layouts/boilerplate") %>
 
 <body>
+
+  <div class="offset-5 mar mb-3">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-danger" for="btnradio1">user login</label>
+    
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-danger" for="btnradio2">Admin login </label>
+    </div>
+  </div>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card shadow-lg p-4">
           <h2 class="text-center mb-4">Login</h2>
 
-          <form action="/project/login" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+          <form action="/EcoQuest/login" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
             <!-- Username -->
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
@@ -79,7 +89,7 @@
 
           <!-- Signup Link -->
           <p class="text-center mt-3">
-            Don't have an account? <a href="/project/signup">Sign Up</a>
+            Don't have an account? <a href="/EcoQuest/signup">Sign Up</a>
           </p>
         </div>
       </div>
@@ -106,4 +116,5 @@
       });
     })();
   </script>
+  
 </body>
