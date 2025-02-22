@@ -70,7 +70,12 @@ nav {
   border-radius: 1rem;
 }
 
-.SIGNUP {
+.login-btn:hover {
+  background: #388e3c;
+  transform: scale(1.03);
+}
+
+.signup {
   background-color: #ffffff !important;
   color: rgb(73, 73, 73) !important;
   outline: 1px solid #388e3c;
@@ -79,6 +84,11 @@ nav {
   text-align: center;
   border-radius: 1rem;
   margin-right: 10px;
+}
+
+.signup:hover {
+  background: #388e3c;
+  transform: scale(1.03);
 }
 
 .fa-arrow-right {
@@ -104,8 +114,221 @@ nav {
 }
 
 
+/* Index page */
+.hero-section {
+  position: relative;
+  /* Required for absolute positioning */
+  background-image: url("../images/plastic.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 1400px;
+  /* margin: 10px auto; */
+  height: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
 
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
 
+.hero-section * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 6em;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(3, 168, 3), rgb(1, 79, 12), rgb(3, 230, 3));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  line-height: 1.5;
+  width: 70%;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #3ef147;
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: #3ef147;
+  transform: scale(1.05);
+}
+
+.features-section {
+  background: #f4f9fc;
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+
+.section-title {
+  font-size: 2.2em;
+  color: #1e3c72;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 3em;
+  color: #81d4fa;
+  margin-bottom: 15px;
+}
+
+.feature-title {
+  font-size: 1.4em;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.feature-desc {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about-section {
+  background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.2em;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.cta-section {
+  background: #007bff;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1400px;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+
+.cta-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.cta-desc {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #3ef147;
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #34e73d;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1em;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .cta-title {
+    font-size: 1.6em;
+  }
+}
+
+/* toggle button  admin and user login */
 .card {
   border-radius: 10px;
   background: white;
@@ -154,6 +377,112 @@ a:hover {
   text-decoration: none;
 }
 
+/* Login form styling */
+ /* Card Styling */
+ .card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+}
+
+/* Form Styling */
+.form-label {
+  font-size: 1.1rem;
+  color: #00112d;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-control,
+.form-control:focus {
+  border-radius: 10px;
+  border: 2px solid #81d4fa;
+  padding: 12px;
+  font-size: 1rem;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.invalid-feedback {
+  font-size: 0.9rem;
+  color: #ef5350;
+  margin-top: 5px;
+}
+
+/* Button Styling */
+.btn-success {
+  background: #4caf50;
+  border: none;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+  background: #388e3c;
+  transform: scale(1.03);
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #2a5298;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #4caf50;
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+  .card h2 {
+    font-size: 1.5rem;
+  }
+  .btn-success {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
 /* testimonial */
 
 .testimonial-text {
@@ -176,7 +505,6 @@ a:hover {
   padding: 30px 10px;
 }
 
-
 svg {
   height: 50px;
   width: 50px;
@@ -186,10 +514,8 @@ svg {
   font-size: 15px;
 }
 
-
 .add {
   color: white;
-  background-color: #2a5298;
   border: none;
   border-radius: 1rem;
 }
@@ -215,15 +541,13 @@ svg {
   background-color: #FFF;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border-radius: 25px;
+  border-radius: 20px;
   flex-shrink: 0;
 }
 
 .image-content {
-  border-radius: 50%;
   position: relative;
   padding: 25px 0;
-  background-color: #2a5298;
   border-radius: 25px 25px 0 25px;
 }
 
@@ -236,24 +560,18 @@ svg {
 
 .card-image {
   position: relative;
-  border-radius: 50%;
   height: 150px;
   width: 150px;
-  background: #FFF;
   padding: 3px;
   margin: auto;
 }
 
 .card-img1 {
-  border-radius: 50%;
   height: 100%;
   width: 100%;
   object-fit: cover;
   border: 4px solid white;
-  position: absolute;
-  left: -3px;
-  top: -2px;
-  outline: 5px solid white;
+  outline: 2px solid white;
 }
 
 .name {
@@ -274,7 +592,7 @@ svg {
   font-size: 16px;
   color: #FFF;
   padding: 8px 16px;
-  background-color: #2a5298;
+  background-color: #007bff;
   border-radius: 6px;
   margin: 14px;
   cursor: pointer;
@@ -283,7 +601,6 @@ svg {
 
 .button:hover {
   cursor: default;
-  background-color: #2a5298;
 }
 
 .overlay {
@@ -292,7 +609,7 @@ svg {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #2a5298;
+  background-color: #03f4df53;
   border-radius: 25px 25px 0 25px;
 }
 
@@ -302,7 +619,7 @@ svg {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: #2a5298;
+  background-color: #03f4df53;
 }
 
 .overlay::before {
@@ -351,8 +668,8 @@ section {
   border: none;
   font-size: 10px;
   color: #FFF;
-  padding: 3px 8px;
-  background-color: #2a5298;
+  padding: 3px 20px;
+  background-color: #007bff;
   border-radius: 16px;
   margin: 4px;
   cursor: pointer;
@@ -373,11 +690,20 @@ section {
     flex: 0 0 calc(100% / 1);
     /* Show 1 card at a time on small screens */
   }
+
+  .slider-container {
+    width: 22rem;
+  }
+}
+
+@media screen and (min-width: 571px) and (max-width: 1080px) {
+  .slider-container {
+    width: 43rem;
+  }
 }
 
 
 /* Index */
-
 /* Awarness  */
 
 .plastic-awareness-container {
@@ -389,6 +715,7 @@ section {
   align-items: center;
   background-color: #f4f4f4;
 }
+
 .plastic-awareness-content {
   width: 70%;
   background: white;
@@ -397,6 +724,7 @@ section {
   box-shadow: 0rem 0rem 0.625rem rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
 }
+
 .plastic-awareness-img {
   height: 300px;
   width: 100%;
@@ -405,49 +733,60 @@ section {
   margin: 0 auto;
   border-radius: 10px;
 }
+
 .plastic-awareness-header {
   text-align: center;
   color: #2c3e50;
 }
+
 .plastic-awareness-section,
 .plastic-benefits-section {
   margin: 1.25rem 0;
 }
+
 .plastic-awareness-section div {
   background: #f6f6f6;
   padding: 0.9375rem;
   margin: 0.9375rem 0;
   border-radius: 0.5rem;
 }
+
 .plastic-awareness-title,
 .plastic-awareness-subtitle {
   color: #2980b9;
 }
+
 .plastic-awareness-list {
   padding-left: 1.25rem;
 }
+
 .plastic-benefits-list {
   background: #dff9fb;
   padding: 0.9375rem;
   border-radius: 0.5rem;
 }
+
 @media (max-width: 768px) {
   .plastic-awareness-content {
     width: 90%;
     padding: 1rem;
   }
 }
+
 @media (max-width: 480px) {
   .plastic-awareness-content {
     width: 95%;
     padding: 0.75rem;
   }
+
   .plastic-awareness-header {
     font-size: 1.5rem;
   }
+
   .plastic-awareness-title {
     font-size: 1.2rem;
   }
+
   p,
   li {
     font-size: 1rem;
@@ -576,19 +915,16 @@ footer {
 
   .fa-arrow-right {
     padding: 5px;
-    background-color: #2a5298;
-    color: #2a5298;
     border-radius: 50%;
   }
 
   .login-btn {
-    background-color: #2a5298 !important;
-    color: #2a5298 !important;
     font-size: 0.3rem;
     width: 100px;
     text-align: center;
     border-radius: 0.5rem;
   }
+  
 }
 
 @media (max-width: 525px) {
@@ -615,7 +951,11 @@ footer {
   .alert-danger {
     width: 80%;
   }
+  .signup {
+    font-size: 0.3rem;
+    width: 100px;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+  }
 }
-
-
-

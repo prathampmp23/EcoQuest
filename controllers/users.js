@@ -6,8 +6,6 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const { storage } = require("../cloudConfig.js");
 const upload = multer({ storage });
 
-
-
 module.exports.rendersignUpForm = (req, res) => {
   res.render("users/signup.ejs");
 };
@@ -15,7 +13,11 @@ module.exports.rendersignUpForm = (req, res) => {
 module.exports.signUp = async (req, res) => {
   try {
     let { username, email, password } = req.body;
-    const newUser = new User({ email, username });
+    // Create a new User entry
+    let image = req.file
+      ? { url: req.file.path, filename: req.file.filename }
+      : null;
+    const newUser = new User({ email, username, image });
     const registerUser = await User.register(newUser, password);
     console.log(registerUser);
     // automatically logged in when user signUp
@@ -24,11 +26,11 @@ module.exports.signUp = async (req, res) => {
         return next(err);
       }
       req.flash("success", "Welcome to EcoQuest!");
-      res.redirect("/EcoQuest#");
+      res.redirect("/EcoQuest");
     });
   } catch (err) {
     req.flash("error", err.message);
-    res.redirect("/signup");
+    res.redirect("/EcoQuest/signup");
   }
 };
 
@@ -99,26 +101,25 @@ module.exports.wasteLog = async (req, res, next) => {
   }
 };
 
-
 module.exports.renderLeaderboard = async (req, res) => {
   const leaderboard = await User.aggregate([
     {
       $lookup: {
-        from: "wastelogs", 
+        from: "wastelogs",
         localField: "_id",
         foreignField: "userId",
-        as: "wasteLogs"
-      }
+        as: "wasteLogs",
+      },
     },
     {
       $project: {
         username: 1,
         profilePic: 1,
-        totalRecycled: { $sum: "$wasteLogs.quantity" }
-      }
+        totalRecycled: { $sum: "$wasteLogs.quantity" },
+      },
     },
     { $sort: { totalRecycled: -1 } }, // Sort by highest waste recycled
-    { $limit: 10 } // Show top 10 users
+    { $limit: 10 }, // Show top 10 users
   ]);
 
   res.render("listing/leaderboard.ejs", { leaderboard });

@@ -26,36 +26,52 @@
       updateActiveState();
     });
   </script>
-  <div class="row mb-3">
-    <div class="col-6 offset-3">
-      <h2 class="mb-4 mt-3">Login</h2>
-      <form action="/EcoQuest/login" method="POST" class="needs-validation mb-3" novalidate>
-        <div class="mb-3">
-          <label for="username" class="form-lable">Username</label>
-          <input
-            name="username"
-            id="username"
-            type="text"
-            placeholder="Enter Username"
-            class="form-control"
-            required
-          />
-          <div class="valid-feedback">Looks good.</div>
-          <div class="invalid-feedback">Please provide a valid Username.</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-4">
+          <h2 class="text-center mb-4">User Login</h2>
+
+          <form
+            action="/EcoQuest/login"
+            method="POST"
+            class="needs-validation mb-3"
+            novalidate
+          >
+            <div class="mb-3">
+              <label for="username" class="form-lable">Username</label>
+              <input
+                name="username"
+                id="username"
+                type="text"
+                placeholder="Enter Username"
+                class="form-control"
+                required
+              />
+              <div class="valid-feedback">Looks good.</div>
+              <div class="invalid-feedback">
+                Please provide a valid Username.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-lable">Password</label>
+              <input
+                name="password"
+                id="password"
+                type="password"
+                placeholder="Enter password"
+                class="form-control"
+                required
+              />
+            </div>
+            <button class="btn btn-success">Login</button>
+          </form>
+          <!-- Back to Home -->
+          <p class="text-center mt-3">
+            Don't have account &nbsp;<a href="/EcoQuest/signup">SignUp</a>
+          </p>
         </div>
-        <div class="mb-3">
-          <label for="password" class="form-lable">Password</label>
-          <input
-            name="password"
-            id="password"
-            type="password"
-            placeholder="Enter password"
-            class="form-control"
-            required
-          />
-        </div>
-        <button class="btn btn-success">Login</button>
-      </form>
+      </div>
     </div>
   </div>
 </body>

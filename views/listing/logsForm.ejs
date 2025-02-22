@@ -1,113 +1,4 @@
 <% layout("layouts/boilerplate") %>
-
-<style>
-
-  /* Card Styling */
-  .card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  }
-
-  .card h2 {
-    font-size: 2rem;
-    color: #1e3c72;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    
-  }
-
-  /* Form Styling */
-  .form-label {
-    font-size: 1.1rem;
-    color: #2a5298;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .form-control,
-  .form-control:focus {
-    border-radius: 10px;
-    border: 2px solid #81d4fa;
-    padding: 12px;
-    font-size: 1rem;
-    box-shadow: none;
-    transition: border-color 0.3s ease;
-  }
-
-  .form-control:focus {
-    border-color: #4caf50;
-    outline: none;
-  }
-
-  textarea.form-control {
-    resize: vertical;
-    min-height: 100px;
-  }
-
-  .invalid-feedback {
-    font-size: 0.9rem;
-    color: #ef5350;
-    margin-top: 5px;
-  }
-
-  /* Button Styling */
-  .btn-success {
-    background: #4caf50;
-    border: none;
-    padding: 14px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-
-  .btn-success:hover {
-    background: #388e3c;
-    transform: scale(1.05);
-  }
-
-  /* Back Link */
-  .back-link {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #2a5298;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .back-link:hover {
-    color: #4caf50;
-    text-decoration: underline;
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .card {
-      padding: 20px;
-    }
-    .card h2 {
-      font-size: 1.5rem;
-    }
-    .btn-success {
-      font-size: 1rem;
-      padding: 12px;
-    }
-  }
-</style>
-
 <body>
   <div class="container">
     <div class="row justify-content-center">
@@ -161,7 +52,9 @@
                 accept="image/*"
                 required
               />
-              <div class="invalid-feedback">Please upload an image of the collected waste.</div>
+              <div class="invalid-feedback">
+                Please upload an image of the collected waste.
+              </div>
             </div>
 
             <!-- Recycling Center (Optional) -->
@@ -186,35 +79,12 @@
 
           <!-- Back to Dashboard -->
           <p class="text-center mt-3">
-
             <a href="/dashboard" class="back-link">Back to Dashboard</a>
 
             <a href="/EcoQuest">Back to home page</a>
-
           </p>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-    // Bootstrap Form Validation (unchanged)
-    (function () {
-      "use strict";
-      const forms = document.querySelectorAll(".needs-validation");
-      Array.from(forms).forEach((form) => {
-        form.addEventListener(
-          "submit",
-          (event) => {
-            if (!form.checkValidity()) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add("was-validated");
-          },
-          false
-        );
-      });
-    })();
-  </script>
 </body>

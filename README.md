@@ -19,17 +19,20 @@ educational resources on reducing plastic consumption.
 Follow these steps to set up and run the project locally:
 
 ### 1. Clone the Repository
+
 ```sh
 git clone https://github.com/prathampmp23/HackOn_CodeSmashers
 cd EcoQuest
 ```
 
 ### 2. Install Dependencies
+
 ```sh
 npm install
 ```
 
 ### 3. Start the Server
+
 ```sh
 node app.js
 ```
@@ -39,4 +42,3 @@ The website will be accessible at **http://localhost:3000/**.
 ---
 
 That's it! Your app is now running locally. 🚀
-

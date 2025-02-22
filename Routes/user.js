@@ -17,11 +17,10 @@ router
   .get(userController.renderLogForm)
   .post(upload.single("image"), wrapAsync(userController.wasteLog));
 
-
 router
   .route("/EcoQuest/signup")
   .get(userController.rendersignUpForm)
-  .post(wrapAsync(userController.signUp));
+  .post(upload.single("image"), wrapAsync(userController.signUp));
 
 router.route("/EcoQuest/admin").get(adminController.renderAdminForm);
 

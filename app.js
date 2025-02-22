@@ -89,8 +89,12 @@ app.use((req, res, next) => {
 app.use("/", userRouter);
 
 // **Root route**
-app.get("/", (req, res) => {
-  res.render("listing/index.ejs");
+app.get("/", async(req, res) => {
+  const showLogs = await Waste.find({})
+    .populate("userId", "username") // Fetch user details
+    .sort({ createdAt: -1 }) // Sort by latest entries
+    .limit(5);
+  res.render("listing/index.ejs",{showLogs});
 });
 
 // Index route
